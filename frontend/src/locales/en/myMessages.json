@@ -1,0 +1,21 @@
+{
+  "myMessages": {
+    "loading": "Loading your messages…",
+    "title": "My contact messages",
+    "subtitle": "View your past questions and the responses from the team.",
+    "badge": "{{count}} conversation",
+    "badge_plural": "{{count}} conversations",
+    "empty_title": "You have not sent any messages yet.",
+    "empty_subtitle": "Use the contact form on the homepage to reach out, and replies will appear here.",
+    "status": {
+      "answered": "answered",
+      "closed": "closed",
+      "open": "open"
+    },
+    "delete_confirm": "Are you sure you want to delete this conversation?",
+    "delete_btn": "Delete",
+    "from_you": "You",
+    "from_admin": "Admin",
+    "no_replies": "No replies yet. The team will respond here."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "community": {
+    "badge": "COMMUNITY",
+    "title": "Walk the journey together, not alone.",
+    "intro": "Connect with fellow Orthodox students, share your struggles and joys, and grow together in Christ through prayer, study, and friendship on campus.",
+    "bullets": {
+      "weekly": {
+        "title": "Weekly Gatherings",
+        "body": "Fellowship meals, reflections, and discussions every week on or near campus."
+      },
+      "study": {
+        "title": "Study Circles",
+        "body": "Small groups for Scripture, patristic reading, and campus-focused Q&A."
+      },
+      "spiritual": {
+        "title": "Spiritual Companionship",
+        "body": "Connect with mentors and older students for encouragement and guidance."
+      }
+    },
+    "image": {
+      "alt": "Community gathering",
+      "chip": "CAMPUS • FELLOWSHIP",
+      "quote": "“Where two or three are gathered in My name…” (Mt 18:20)"
+    },
+    "form": {
+      "title": "Contact the team",
+      "subtitle": "Send a question, ask about local groups, or share how we can be praying for you and your community.",
+      "subject_label": "Subject",
+      "subject_placeholder": "What is this about?",
+      "message_label": "Message",
+      "message_placeholder": "Share your question, request, or prayer need...",
+      "send": "Send message",
+      "sending": "Sending..."
+    },
+    "auth_required_confirm": "You need an account to send a message.\nDo you want to register now?",
+    "messages": {
+      "sent": "Your message has been sent. Thank you!"
+    },
+    "errors": {
+      "empty_fields": "Please enter a subject and message.",
+      "send_failed": "Failed to send message.",
+      "generic": "Something went wrong. Please try again."
+    }
+  }
+}

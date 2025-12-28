@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="am" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ተደጋግመው የሚጠየቁ ጥያቄዎች እና መልሶቻቸው</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">
+            Click a topic to open the PDF in the viewer.
+          </p>
+
+          <div class="section-title">
+            <i class="fas fa-cross"></i>
+            <span class="section-title-text">Christology &amp; Salvation</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kerestosyehulugetanew.pdf',
+                  'ክርስቶስ የኹሉ ጌታ ነው?'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክርስቶስ የኹሉ ጌታ ነው?</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/christ%20amalaj%20or%20temalaj.pdf',
+                  'ክርስቶስ አማላጅ ወይስ ተማላጅ?'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክርስቶስ አማላጅ ወይስ ተማላጅ?</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/eyesus.pdf',
+                  'ኢየሱስ ክርስቶስ ማን ነው?'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ኢየሱስ ክርስቶስ ማን ነው?</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/yesewuhiwot.pdf',
+                  'የሰው ሕይወት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የሰው ሕይወት</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-church"></i>
+            <span class="section-title-text">Saints, Mary &amp; Angels</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/mariam.pdf',
+                  'ስለ ቅድስት ድንግል ማርያም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ቅድስት ድንግል ማርያም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kidusan.pdf',
+                  'ስለ ቅዱሳን (አማላጅነት)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ቅዱሳን (አማላጅነት)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/segedet%20leqedusan.pdf',
+                  'ስገድት ለቅዱሳን'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስገድት ለቅዱሳን</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/kidusgabicha.pdf',
+                  'ቅዱስ ጋብቻ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቅዱስ ጋብቻ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kidusanmelaeket.pdf',
+                  'ስለ ቅዱሳን መላእክት(1)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ቅዱሳን መላእክት(1)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/angeles/kidusanmelaeket.pdf',
+                  'ቅዱሳን መላእክት(2)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቅዱሳን መላእክት(2)</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-image"></i>
+            <span class="section-title-text"
+              >Icons, Tabot &amp; Holy Things</span
+            >
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/icons.pdf',
+                  'ስለ ቅዱሳት ስዕላት (Icons)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ቅዱሳት ስዕላት (Icons)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/tabot.pdf',
+                  'ስለ ታቦት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ታቦት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kibreqidusan.pdf',
+                  'ክብረ ቅዱሳን(1)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ቅዱሳን(1)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/saints/kibrekidusann.pdf',
+                  'ክብረ ቅዱሳን (2)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ቅዱሳን (2)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kibre%20dingel.pdf',
+                  'ክብረ ድንግል ማርያም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ድንግል ማርያም</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-hands"></i>
+            <span class="section-title-text">Mysteries &amp; Sacraments</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/meron.pdf',
+                  'ሜሮን (ቅዱስ ዘይት)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ሜሮን (ቅዱስ ዘይት)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/holycommunion.pdf',
+                  'ቅዱስ ቁርባን'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቅዱስ ቁርባን</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/penance.pdf',
+                  'ንስሐ መናዘዝ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ንስሐ መናዘዝ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/niseha.pdf',
+                  'ስለ ንስሐ (ተጨማሪ)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ንስሐ (ተጨማሪ)</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-fire"></i>
+            <span class="section-title-text">Fasting, Meskel &amp; Timket</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/tsom.pdf',
+                  'ስለ ጾም (1)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ስለ ጾም (1)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/tsome.pdf',
+                  'ጾም እና ማብራሪያው'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ጾም እና ማብራሪያው</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/tsometirgum.pdf',
+                  'ጾም ትርጉም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ጾም ትርጉም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/KirstianawiTsome2005.pdf',
+                  'ክርስቲያናዊ ጾም (2005)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክርስቲያናዊ ጾም (2005)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/01meskal.pdf',
+                  'ክብረ ቅዱስ መስቀል(1)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ቅዱስ መስቀል(1)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/kibrekidusmeskel.pdf',
+                  'ክብረ ቅዱስ መስቀል(2)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ቅዱስ መስቀል(2)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/yihitsanattimket.pdf',
+                  'የህጻናት ጥምቀት (በ40ና በ80 ቀናት ለምን እንጠመቃለን?)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  የህጻናት ጥምቀት (በ40ና በ80 ቀናት ለምን እንጠመቃለን?)
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-question-circle"></i>
+            <span class="section-title-text">
+              Other Topics (Jehovah, 666, Death, etc.)
+            </span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/666.pdf',
+                  '666 ምንድነው?'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">666 ምንድነው?</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/mot.pdf',
+                  'ሞት እና ከሞት በኋላ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  ሞት እና ከሞት በኋላ(What happens after death?)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/tezkarenafitehat.pdf',
+                  'ተዝካር እና ፍትሐት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ተዝካር እና ፍትሐት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/jehova.pdf',
+                  'የየሔዋህ ምስክሮች ኑፋቄ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የየሔዋህ ምስክሮች ኑፋቄ</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-book-open"></i>
+            <span class="section-title-text"
+              >Misc. Doctrine &amp; Responses</span
+            >
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/tiyakenamelse/qanda/arch.pdf',
+                  'ክብረ ታቦት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ታቦት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/gabichayenkemangarlifetsem.pdf',
+                  'ጋብቻዬን ከማን ጋር ልፈጽም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ጋብቻዬን ከማን ጋር ልፈጽም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/kemayamenugargabicha.pdf',
+                  'ከማያመኑ ጋር ጋብቻ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ከማያመኑ ጋር ጋብቻ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/segawuwedemu.pdf',
+                  'ሥጋ ወደሙ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ሥጋ ወደሙ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/gibresedomawintenayesetochkihnet.pdf',
+                  'ግብረ ሰዶማዊ እና የሴቶች ክህነት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> ግብረ ሰዶማዊ እና የሴቶች ክህነት </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/miscellenous/yemenafekanmanenetmelsochachewu.pdf',
+                  'የመናፍቃን ማንነት መልሶቻቸው'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የመናፍቃን ማንነት መልሶቻቸው</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              Back to list
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>Loading PDF...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

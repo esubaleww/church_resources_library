@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="am" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ምስጢራት - PDF መጽሐፍት</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">ከዚህ ዝርዝር ውስጥ መፅሃፍ ይምረጡ።</p>
+
+          <div class="section-title">
+            <i class="fas fa-book-bible"></i>
+            <span class="section-title-text">ምስጢራት – PDF መጽሐፍት</span>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/halewotegziabher.pdf',
+                  '1. ሀልዎተ እግዚአብሔር'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">1. ሀልዎተ እግዚአብሔር</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/negereegizeabher.pdf',
+                  '2. ነገረ እግዚአብሔር'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">2. ነገረ እግዚአብሔር</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/trinity.pdf',
+                  '3. ምስጢረ ሥላሴ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">3. ምስጢረ ሥላሴ</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/incarnation.pdf',
+                  '4. ምስጢረ ሥጋዌ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">4. ምስጢረ ሥጋዌ</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/weldwahid.pdf',
+                  '5. ወልድ ዋህድ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">5. ወልድ ዋህድ</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/negermenfesekidus.pdf',
+                  '6. ነግረ መንፈስ ቅዱስ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">6. ነግረ መንፈስ ቅዱስ</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/baptism.pdf',
+                  '7. ምስጢረ ጥምቀት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">7. ምስጢረ ጥምቀት</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/tinsaemutan.pdf',
+                  '8. ምስጢረ ትንሣኤ ሙታን'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">8. ምስጢረ ትንሣኤ ሙታን</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/meron.pdf',
+                  '9. ምስጢረ ሜሮን'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">9. ምስጢረ ሜሮን</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/holycommunion.pdf',
+                  '10. ምስጢረ ቅዱስ ቁርባን'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">10. ምስጢረ ቅዱስ ቁርባን</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/penance.pdf',
+                  '11. ምስጢረ ንሥሐ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">11. ምስጢረ ንሥሐ</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/mkihenet.pdf',
+                  '12. ምስጢረ ክህነት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">12. ምስጢረ ክህነት</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/martimony.pdf',
+                  '13. ምስጢረ ተክሊል'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">13. ምስጢረ ተክሊል</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/mistereqendil.pdf',
+                  '14. ምስጢረ ቀንዲል'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">14. ምስጢረ ቀንዲል</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/mystery/pdfs/summary.pdf',
+                  '15. ማጠቃለያ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">15. ማጠቃለያ</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              ወደ ዝርዝር መመለስ
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "footer": {
+    "brand": {
+      "tagline": "Orthodox",
+      "name": "Resource Center",
+      "subtitle": "Supporting Orthodox students in faith and learning."
+    },
+    "links": {
+      "title": "Quick Links",
+      "resources": "Resources",
+      "prayers": "Prayers",
+      "events": "Events"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "info@orthodoxcenter.edu",
+      "location": "Poly Campus"
+    },
+    "hours": {
+      "title": "Office Hours",
+      "weekday": "Mon-Fri: 9 AM - 5 PM",
+      "sunday": "Sun: After Liturgy"
+    },
+    "copyright": "© 2025 Orthodox Resource Center. All rights reserved."
+  }
+}

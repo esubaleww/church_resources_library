@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Annual Bible Readings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">
+            Select a month or key to open the PDF reading plan.
+          </p>
+
+          <div class="section-title">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="section-title-text">
+              Annual Morning, Evening &amp; Liturgical Readings
+            </span>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/januaryreadings.pdf',
+                  'January – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  January – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/februaryreading.pdf',
+                  'February – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  February – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/marchcalendar.pdf',
+                  'March – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  March – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/april.pdf',
+                  'April – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  April – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/mayreadings.pdf',
+                  'May – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">May – Annual readings (English)</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/junereadings.pdf',
+                  'June – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  June – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/july.pdf',
+                  'July – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  July – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/augustreadings.pdf',
+                  'August – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  August – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/septemberreadin.pdf',
+                  'September – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  September – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/octoberreading.pdf',
+                  'October – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  October – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/novemberreading.pdf',
+                  'November – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  November – Annual readings (English)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/decemberreading.pdf',
+                  'December – Annual readings (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  December – Annual readings (English)
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-key"></i>
+            <span class="section-title-text">Calendar Keys &amp; Pagumen</span>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/readings/calkey02.pdf',
+                  'Calendar key 01'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Calendar key 01</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/readings/calkey02a.pdf',
+                  'Calendar key 02'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Calendar key 02</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/readings/pagumengitsawe.pdf',
+                  'Pagumen – Morning readings (Gitsawé)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Pagumen – Morning readings (Gitsawé)
+                </span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/readings/pagumen.pdf',
+                  'Pagumen – Daily readings'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Pagumen – Daily readings</span>
+              </button>
+            </li>
+
+            <!-- Optional: open the HTML calendar in the same viewer -->
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/annualreadings/calendar.html',
+                  'Annual readings calendar (HTML)'
+                )"
+              >
+                <i class="link-icon fas fa-link"></i>
+                <span class="link-text"> Annual readings calendar (HTML) </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              Back to list
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>Loading reading plan...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "events": {
+    "badge": "EVENTS",
+    "title": "Upcoming Events",
+    "subtitle": "Join gatherings for worship, study, and fellowship with Orthodox students and friends.",
+    "loading": "Loading events...",
+    "empty": "No upcoming events.",
+    "card": {
+      "attending": "attending"
+    },
+    "buttons": {
+      "rsvp": "RSVP",
+      "rsvped": "RSVPed",
+      "submitting": "Submitting...",
+      "cancel": "Cancel"
+    },
+    "form": {
+      "title": "RSVP for {{event}}",
+      "subtitle": "Share your details so the organizers know you are coming.",
+      "name_label": "Name",
+      "email_label": "Email",
+      "confirm": "Confirm RSVP"
+    },
+    "messages": {
+      "rsvp_thanks": "Thank you for your RSVP!"
+    },
+    "errors": {
+      "rsvp_failed": "Failed to RSVP",
+      "generic": "Something went wrong. Please try again."
+    }
+  }
+}

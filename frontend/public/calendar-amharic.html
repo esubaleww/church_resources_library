@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="am" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calendar, Feasts & Synaxarium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <header class="page-header">
+        <strong>Calendar, Feasts &amp; Synaxarium</strong>
+      </header>
+
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">ሰነዶቹን በመመርመር በታች ባለው መመልከቻ ውስጥ ይክፈቱ።</p>
+
+          <div class="section-title">
+            <i class="fas fa-church"></i>
+            <span class="section-title-text">የበዓላት &amp; ወርሃዊ ዝክረ ቅዱሳን</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/yebealatenaatsewamat.pdf',
+                  'የበዓላትና ዓመታት ማጠቃለያ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የበዓላትና ዓመታት ማጠቃለያ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/seasonal/yegetabealat.html',
+                  'የገባ በዓላት (የወቅታዊ በዓላት) ገጽ'
+                )"
+              >
+                <i class="link-icon fas fa-globe"></i>
+                <span class="link-text"> የገባ በዓላት (የወቅታዊ በዓላት) ገጽ </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/werawi%20bealat.pdf',
+                  'ወርሃዊ በዓላት (የወሩ ቅዱሳን እና በዓላት)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> ወርሃዊ በዓላት (የወሩ ቅዱሳን እና በዓላት) </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/yebealatmawecha.pdf',
+                  'የበዓላት መወጫ (ማመዛዘኛ ሰንጠረዥ)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> የበዓላት መወጫ (ማመዛዘኛ ሰንጠረዥ) </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Abushaker & Time Calculation -->
+          <div class="section-title">
+            <i class="fas fa-hourglass-half"></i>
+            <span class="section-title-text">አቡሻእር &amp; የዘመን ሂሳብ</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/abhushar/abushaer_Part1.pdf',
+                  'መጽሐፈ አቡሻእር - ክፍል 1'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">መጽሐፈ አቡሻእር - ክፍል 1</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/abhushar/abushaer_Part2.pdf',
+                  'መጽሐፈ አቡሻእር - ክፍል 2'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">መጽሐፈ አቡሻእር - ክፍል 2</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/tewefetawi%20hasabe%20zemen.pdf',
+                  'ቴወፈታዊ ሐሳበ ዘመን (የዘመን ሂሳብ)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> ቴወፈታዊ ሐሳበ ዘመን (የዘመን ሂሳብ) </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/baherehasab.pdf',
+                  'ባሕረ ሐሳብ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ባሕረ ሐሳብ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/qemere%20azemanat.pdf',
+                  'ቀመረ ዘመናት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቀመረ ዘመናት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/tikekelegnawuyeethiocalenda.pdf',
+                  'ጥቅል እግነዋዊ የኢትዮጵያ ቀን መቁጠሪያ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> ጥቅል እግነዋዊ የኢትዮጵያ ቀን መቁጠሪያ </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Year, Seasons & New Year -->
+          <div class="section-title">
+            <i class="fas fa-sun"></i>
+            <span class="section-title-text">ዓመት, ዘመናት &amp; አዲስ ዓመት</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/yezemenakotaterr.pdf',
+                  'የዘመና ቆጠር'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የዘመና ቆጠር</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/zemenkotera.pdf',
+                  'ዘመን ኮተራ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ዘመን ኮተራ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/abeyetbealat/ethionewyearprofgetachew.pdf',
+                  'የኢትዮ አዲስ ዓመት - በፕሮፌሰር ጌታቸው'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> የኢትዮ አዲስ ዓመት - በፕሮፌሰር ጌታቸው </span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Synaxarium (Senkesar) -->
+          <div class="section-title">
+            <i class="fas fa-book-open"></i>
+            <span class="section-title-text">መጽሐፈ ሰንክሳር</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/holybooks/metsehafesenkesar.html',
+                  'መጽሐፈ ሰንክሳር (አማርኛ) - ዋና ገጽ'
+                )"
+              >
+                <i class="link-icon fas fa-globe"></i>
+                <span class="link-text"> መጽሐፈ ሰንክሳር (አማርኛ) - ዋና ገጽ </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              ወደ ዝርዝር ተመለስ
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>ሰነዱ በመጫን ላይ ነው...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

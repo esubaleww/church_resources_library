@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="am" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>የአዲስ ኪዳን ትርጓሜዎች - New Testament Commentaries</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <div class="section-title">
+            <i class="fas fa-cross"></i>
+            <span class="section-title-text">የወንጌላት ትርጓሜ</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/matewes_commentary.pdf', 'የማቴዎስ ወንጌል ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-book-open"></i>
+                <span class="link-text">የማቴዎስ ወንጌል ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Markos_commentary.pdf', 'የማርቆስ ወንጌል ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-book-open"></i>
+                <span class="link-text">የማርቆስ ወንጌል ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Lukas_commentary.pdf', 'የሉቃስ ወንጌል ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-book-open"></i>
+                <span class="link-text">የሉቃስ ወንጌል ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Yohannes_commentary.pdf', 'የዮሐንስ ወንጌል ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-book-open"></i>
+                <span class="link-text">የዮሐንስ ወንጌል ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Acts.pdf', 'የሐዋርያት ሥራ ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-book-open"></i>
+                <span class="link-text">የሐዋርያት ሥራ ትርጓሜ</span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Epistles -->
+          <div class="section-title">
+            <i class="fas fa-envelope"></i>
+            <span class="section-title-text">መልእክታት</span>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/01%20Romans.pdf', 'ሮሜ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">1. ሮሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/02%20Korontos.pdf', '1 ቆሮንቶስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">2. 1 ቆሮንቶስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/03%20Korontos.pdf', '2 ቆሮንቶስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">3. 2 ቆሮንቶስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/04%20Gelatya.pdf', 'ገላትያ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">4. ገላትያ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/05%20ephesians.pdf', 'ኤፌሶን መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">5. ኤፌሶን</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/06%20Philipsious.pdf', 'ፊሊጵስዩስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">6. ፊሊጵስዩስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/07%20Colasians.pdf', 'ቆላስይስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">7. ቆላስይስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/08%20Thesalonki.pdf', '1 ተሰሎንቄ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">8. 1 ተሰሎንቄ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/09%20Thesalonki.pdf', '2 ተሰሎንቄ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">9. 2 ተሰሎንቄ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/10%20Thimoty%2001.pdf', '1 ጢሞቴንዮስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">10. 1 ጢሞቴንዮስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/11%20Thimoty.pdf', '2 ጢሞቴንዮስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">11. 2 ጢሞቴንዮስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/12%20titus.pdf', 'ቲቶስ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">12. ቲቶስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/13%20Philmon.pdf', 'ፊልሞን መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">13. ፊልሞን</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/paulos%20commentary/14%20Ebrawyan.pdf', 'ዕብራውያን መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-hashtag"></i>
+                <span class="link-text">14. ዕብራውያን</span>
+              </button>
+            </li>
+          </ul>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Peter%201st%20epistle.pdf', 'የጴጥሮስ መጀመሪያ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የጴጥሮስ መጀመሪያ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/Peter%202nd%20epistle.pdf', 'የጴጥሮስ ሁለተኛ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የጴጥሮስ ሁለተኛ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/John%201st%20epistle.pdf', 'የዮሐንስ መጀመሪያ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የዮሐንስ መጀመሪያ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/john%202nd%20epistle.pdf', 'የዮሐንስ ሁለተኛ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የዮሐንስ ሁለተኛ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/john%203rd%20epistle.pdf', 'የዮሐንስ ሶስተኛ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የዮሐንስ ሶስተኛ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/james.pdf', 'የያዕቆብ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የያዕቆብ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/judah.pdf', 'የይሁዳ መልእክት ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-scroll"></i>
+                <span class="link-text">የይሁዳ መልእክት ትርጓሜ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/gospel%20commentary/revelation.pdf', 'የዮሐንስ ራእይ ትርጓሜ')"
+              >
+                <i class="link-icon fas fa-eye"></i>
+                <span class="link-text">የዮሐንስ ራእይ(ራዕየ ዮሐንስ) ትርጓሜ</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-info-circle"></i>
+            <span class="section-title-text">ተጨማሪ መረጃ</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/yeqolotbet/addiskidantitle/addiskidan.html', 'አዲስ ኪዳን አማርኛ መጽሐፍ ቅዱስ')"
+              >
+                <i class="link-icon fas fa-globe"></i>
+                <span class="link-text">አዲስ ኪዳን አማርኛ መጽሐፍ ቅዱስ ገጽ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument('https://www.ethiopianorthodox.org/amharic/holybooks/adis%20and%20mta%20pdf%20files/ADIS-AND-MTA-USER-MANUAL.pdf', 'የአዲስ ኪዳን መጽሐፍ ቅዱስ የተጠቃሚ መመሪያ')"
+              >
+                <i class="link-icon fas fa-book"></i>
+                <span class="link-text">የአዲስ ኪዳን መጽሐፍ ቅዱስ የተጠቃሚ መመሪያ</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              ወደ ዝርዝር ተመለስ
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>ትርጓሜ በመጫን ላይ...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

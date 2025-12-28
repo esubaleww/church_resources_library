@@ -1,0 +1,38 @@
+{
+  "resources": {
+    "badge": "ሀብቶች",
+    "title": "ቤተ መጻሕፍቱን ይጎብኙ",
+    "subtitle": "ለኦርቶዶክሳዊ ጸሎት፣ ጥናትና ለተማሪዎች ሕይወት የሚሆኑ መጻሕፍት፣ ኦዲዮዎች፣ ቪዲዮዎችና መሣሪያዎች።",
+    "search": {
+      "placeholder": "በርዕስ ወይም በመግለጫ ይፈልጉ...",
+      "helper": "በርዕሶችና በመግለጫዎች ውስጥ ይፈልጉ።"
+    },
+    "categories": {
+      "aria": "በ{{category}} ይለዩ"
+    },
+
+    "showing_one": "{{count}} ሀብት እየታዩ ነው",
+    "showing_other": "{{count}} ሀብቶች እየታዩ ነው",
+    "view": {
+      "grid": "ፍርግርግ",
+      "list": "ዝርዝር"
+    },
+    "filters": {
+      "active_label": "የተመረጡ ማጣሪያዎች፡",
+      "clear_all": "ሁሉንም አጽዳ",
+      "clear_all_mobile": "ሁሉንም ማጣሪያዎች አጽዳ",
+      "mobile_title": "መርጃዎችን ያጣሩ",
+      "filter_button": "አጣራ"
+    },
+    "loading": "ሀብቶች በመጫን ላይ...",
+    "empty": "በዚህ ዘርፍ ውስጥ ምንም ሀብቶች አልተገኙም።",
+    "load_more": {
+      "button": "ተጨማሪ 10 ይጫኑ",
+      "progress": "({{visible}} / {{total}})"
+    },
+    "card": {
+      "open_aria": "ሀብቱን ክፈት፡ {{title}}",
+      "explore": "ያስሱ"
+    }
+  }
+}

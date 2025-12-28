@@ -1,0 +1,26 @@
+{
+  "footer": {
+    "brand": {
+      "tagline": "ኦርቶዶክስ",
+      "name": "የሀብት ማዕከል",
+      "subtitle": "የኦርቶዶክስ ተማሪዎችን በእምነት እና በትምህርት የሚያግዝ።"
+    },
+    "links": {
+      "title": "ፈጣን አገናኞች",
+      "resources": "ሀብታት",
+      "prayers": "ጸሎቶች",
+      "events": "መርሃ ግብራት"
+    },
+    "contact": {
+      "title": "አድራሻ",
+      "email": "info@orthodoxcenter.edu",
+      "location": "ፖሊ ካምፓስ"
+    },
+    "hours": {
+      "title": "የስራ ሰዓት",
+      "weekday": "ሰኞ - አርብ፡ ከጠዋቱ 3 - ከቀኑ 11 ሰዓት",
+      "sunday": "እሁድ፡ ከቅዳሴ በኋላ"
+    },
+    "copyright": "© 2025 የኦርቶዶክስ መርጃ ማዕከል፤ መብቱ በህግ የተጠበቀ ነው።"
+  }
+}

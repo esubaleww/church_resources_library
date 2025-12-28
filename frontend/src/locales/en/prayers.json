@@ -1,0 +1,15 @@
+{
+  "prayers": {
+    "badge": "PRAYER LIFE",
+    "title": "Prayer Life",
+    "subtitle": "Cultivate a steady rhythm of prayer with simple patterns you can carry into lectures, dorms, and daily life.",
+    "loading": "Loading prayers...",
+    "empty": "No prayers available.",
+    "buttons": {
+      "open_pdf": "Open PDF",
+      "view_text": "View prayer text",
+      "loading": "Loading...",
+      "close": "Close"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "about": {
+    "badge": "ABOUT THE CENTER",
+    "heading": {
+      "main": "Rooted in Orthodox Tradition,",
+      "sub": "made for campus life."
+    },
+    "intro": "Supporting Orthodox Christian students in their academic and spiritual journey, grounded in the life and teaching of the Ethiopian Orthodox Tewahedo Church.",
+    "pillars": {
+      "learn": {
+        "title": "Learn",
+        "description": "Access authentic Orthodox teachings, Scripture studies, and theological resources."
+      },
+      "grow": {
+        "title": "Grow",
+        "description": "Deepen your prayer life and spiritual practice with guided resources."
+      },
+      "connect": {
+        "title": "Connect",
+        "description": "Join a vibrant community of Orthodox students supporting one another."
+      }
+    },
+    "mission": {
+      "badge": "OUR MISSION",
+      "title": "Forming hearts and minds in Christ on campus.",
+      "body1": "The Orthodox Resource Center exists to give university students easy access to trustworthy Orthodox resources—Scripture, teachings, liturgy, and spiritual guidance—so that faith can grow in the middle of academic life.",
+      "body2": "Through curated content, prayer tools, and community initiatives, the center helps students integrate their Orthodox faith with study, friendship, and service."
+    },
+    "image": {
+      "alt": "Students studying",
+      "chip": "CAMPUS • PRAYER • COMMUNITY",
+      "caption": "Ethiopian Orthodox student life"
+    }
+  }
+}

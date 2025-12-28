@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "background_alt": "Orthodox Church",
+    "cross_aria": "Christian Cross",
+    "badge": {
+      "church": "Ethiopian Orthodox Tewahedo Church"
+    },
+    "title": "Orthodox Resource Center",
+    "subtitle": "Discover trusted Ethiopian Orthodox prayers, teachings, and tools to support your life of study, worship, and service as a university student.",
+    "verse": {
+      "top": {
+        "text": "For with You is the fountain of life; in Your light we see light.",
+        "ref": "Psalm 36:9"
+      },
+      "mobile": {
+        "text": "Thy word is a lamp unto my feet, and a light unto my path.",
+        "ref": "Ps 119:105"
+      },
+      "desktop": {
+        "top": {
+          "text": "Thy word is a lamp unto my feet, and a light unto my path.",
+          "ref": "Ps 119:105"
+        },
+        "bottom": {
+          "text": "Stand fast and hold the traditions which ye have been taught.",
+          "ref": "2 Thes 2:15"
+        }
+      }
+    },
+    "buttons": {
+      "resources": {
+        "label": "Explore Resources",
+        "aria": "Explore Resources"
+      },
+      "events": {
+        "label": "View Events",
+        "aria": "View Events"
+      }
+    },
+    "side_image_alt": "Orthodox worship",
+    "ribbon": "PRAYER • SCRIPTURE • TRADITION"
+  }
+}

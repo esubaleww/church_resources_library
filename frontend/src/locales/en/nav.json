@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "brand": {
+      "line1": "Orthodox",
+      "line2": "Resource Center"
+    },
+    "items": {
+      "home": "Home",
+      "resources": "Resources",
+      "prayers": "Prayers",
+      "events": "Events",
+      "community": "Community",
+      "about": "About"
+    },
+    "daily_prayer": "Daily Prayer",
+    "login_signup": "Login / Sign up",
+    "account": "Account",
+    "my_messages": "My messages",
+    "logout": "Logout"
+  }
+}

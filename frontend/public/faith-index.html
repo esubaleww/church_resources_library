@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Faith of the Church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">Select a topic to read.</p>
+
+          <div class="section-title">
+            <i class="fas fa-cross"></i>
+            <span class="section-title-text">PART I</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#introduction',
+                  'Part I – Introduction'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Introduction</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#trinity',
+                  'The Mystery of the Holy Trinity'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text"> The Mystery of the Holy Trinity </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#incarnation',
+                  'The Mystery of the Incarnation'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text"> The Mystery of the Incarnation </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#baptisim',
+                  'The Mystery of Baptism'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">The Mystery of Baptism</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#communion',
+                  'The Mystery of the Holy Communion'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">
+                  The Mystery of the Holy Communion
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#resurrection',
+                  'The Mystery of Resurrection'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">The Mystery of Resurrection</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#salvation',
+                  'Human Salvation'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Human Salvation</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/faith.html#conclusion',
+                  'Part I – Conclusion'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Conclusion</span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- PART II – The Seven Sacraments -->
+          <div class="section-title">
+            <i class="fas fa-hands"></i>
+            <span class="section-title-text">
+              PART II – The Seven Sacraments
+            </span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacramentintro.html',
+                  'Sacraments – Introduction'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Introduction</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacrabaptism.html',
+                  'Sacrament – Baptism'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Baptism</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacraconfirmation.html',
+                  'Sacrament – Confirmation'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Confirmation</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacrapenance.html',
+                  'Sacrament – Penance'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Penance</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacaracommunion.html',
+                  'Sacrament – Holy Communion'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Holy Communion</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacraunction.html',
+                  'Sacrament – The Unction of the Sick'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">The Unction of the Sick</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacramatrimony.html',
+                  'Sacrament – Holy Matrimony'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Holy Matrimony</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/sacraorders.html',
+                  'Sacrament – Holy Orders'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">Holy Orders</span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- PART III -->
+          <div class="section-title">
+            <i class="fas fa-book-open"></i>
+            <span class="section-title-text">PART III</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/monodyo.html',
+                  'The Issue between Monophysitism and Dyophysitism'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">
+                  The Issue between Monophysitism and Dyophysitism
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/niceancreed.html',
+                  'Fundamental Dogmas in the Nicene Creed'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">
+                  Fundamental Dogmas in the Nicene Creed
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/orthochalcedonian.html',
+                  'Relations with Orthodox Chalcedonian Churches'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">
+                  Relations with Orthodox Chalcedonian Churches
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/dogma/nonchalcedonian.html',
+                  'Dialogue between Orthodox Chalcedonian and Non‑Chalcedonian Churches'
+                )"
+              >
+                <i class="link-icon fas fa-file-lines"></i>
+                <span class="link-text">
+                  Dialogue between Orthodox Chalcedonian and Non‑Chalcedonian
+                  Churches
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              Back to list
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>Loading content...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

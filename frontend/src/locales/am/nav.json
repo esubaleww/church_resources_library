@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "brand": {
+      "line1": "ኦርቶዶክሳዊ",
+      "line2": "የሀብት ማእከል"
+    },
+    "items": {
+      "home": "መነሻ",
+      "resources": "ሀብቶች",
+      "prayers": "ጸሎቶች",
+      "events": "ኩነቶች",
+      "community": "ማኅበረሰብ",
+      "about": "ስለ ማእከሉ"
+    },
+    "daily_prayer": "የዕለት ጸሎት",
+    "login_signup": "ይግቡ / ይመዝገቡ",
+    "account": "መለያ",
+    "my_messages": "መልዕክቶቼ",
+    "logout": "ይውጡ"
+  }
+}

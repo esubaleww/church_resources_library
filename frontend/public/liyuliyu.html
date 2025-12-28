@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sermons, Articles &amp; History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" href="liyu.css" as="style" />
+    <link rel="stylesheet" href="liyu.css" />
+  </head>
+  <body style="height: 100%">
+    <div class="container">
+      <div class="main-content">
+        <div id="list" class="sidebar">
+          <p class="sidebar-intro">Click any item to open it in the viewer.</p>
+
+          <div class="section-title">
+            <i class="fas fa-book-open"></i>
+            <span class="section-title-text">English Weekly Meditations</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/biblicalethiopia.html',
+                  'The Biblical Ethiopia'
+                )"
+              >
+                <i class="link-icon fas fa-file-alt"></i>
+                <span class="link-text">The Biblical Ethiopia</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/loveofgod.pdf',
+                  'The Love of God'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">The Love of God</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Touchmenot.pdf',
+                  '“Touch me not …”'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">“Touch me not …”</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Significance%20of%20the%20Cross.pdf',
+                  'Significance of the Cross'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Significance of the Cross</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/seasonal/transfiguration.pdf',
+                  'Transfiguration (Amharic)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Transfiguration (Amharic)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/3rdsundaylent.pdf',
+                  'Third Week of Lent'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Third Week of Lent</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/4thweeklent.pdf',
+                  'Fourth Week of Lent'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Fourth Week of Lent</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/sixthweeklent.pdf',
+                  'Sixth Week of Lent'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Sixth Week of Lent</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/7thweeklent.pdf',
+                  'Seventh Week of Lent'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Seventh Week of Lent</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/easter.pdf',
+                  'Easter'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Easter</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Easter%20Sermon.pdf',
+                  'Easter Sermon'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Easter Sermon</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/pentecost.pdf',
+                  'Pentecost'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Pentecost</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Our%20Casual%20View%20of%20Sin.pdf',
+                  'Our Casual View of Sin'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Our Casual View of Sin</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/WalkingbyFaith.pdf',
+                  'Walking by Faith'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Walking by Faith</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Pagwomen2000.pdf',
+                  'Pagumen Meditation'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Pagumen Meditation</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/Feast%20of%20Saints%20Peter.pdf',
+                  'Feast of St. Peter'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Feast of St. Peter</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/A%20call%20to%20repentance%20from%20Christ.pdf',
+                  'A Call to Repentance from Christ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  A Call to Repentance from Christ
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/english/weekly/holidayandtime.pdf',
+                  'Holiday and Time'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">Holiday and Time</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="section-title">
+            <i class="fas fa-church"></i>
+            <span class="section-title-text">
+              Amharic Seasonal &amp; Saint Articles
+            </span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/stmary/mary.pdf',
+                  'ድንግል ማርያም - መጻሕፍት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ድንግል ማርያም - መጻሕፍት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/stmary/beselamegebriel.pdf',
+                  'በሰላመ ገብርኤል'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">በሰላመ ገብርኤል</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/saints/yoseph.pdf',
+                  'ቅዱስ ዮሴፍ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቅዱስ ዮሴፍ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/saints/arsemakidist.pdf',
+                  'አርሴማ ቅድስት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">አርሴማ ቅድስት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/saints/meskelkibra.pdf',
+                  'መስቀል ክብራ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">መስቀል ክብራ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/seasonal/Filsataineotc.pdf',
+                  'ፍልሰታ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ፍልሰታ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/seasonal/asteriomariam.pdf',
+                  'አስተርዮ ማርያም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">አስተርዮ ማርያም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/yebetekirstianlidet.pdf',
+                  'የቤተ ክርስቲያን ልደት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የቤተ ክርስቲያን ልደት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/asgeramewusidet.pdf',
+                  'አስገራሚው ውስደት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">አስገራሚው ውስደት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/bealetimket.pdf',
+                  'በዓለ ጥምቀት (Timket)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">በዓለ ጥምቀት (Timket)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/Buhe.pdf',
+                  'ቡሄ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ቡሄ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/debretaboramharic.pdf',
+                  'ደብረ ታቦር (1)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ደብረ ታቦር (1)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/seasonal/debretaboor.pdf',
+                  'ደብረ ታቦር'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ደብረ ታቦር</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/kibredingel.pdf',
+                  'ክብረ ለድንግል'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ክብረ ለድንግል</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/seasonal/erget.pdf',
+                  'እርገት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">እርገት</span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Poems (Amharic) -->
+          <div class="section-title">
+            <i class="fas fa-feather-alt"></i>
+            <span class="section-title-text">Poems (Amharic)</span>
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/kebedemichael.pdf',
+                  'ከበደ ሚካኤል'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ከበደ ሚካኤል</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/tinbeteyonas.pdf',
+                  'ጥንቤት ዮናስ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ጥንቤት ዮናስ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/debiretabor.pdf',
+                  'ደብረ ታቦር ግጥም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ደብረ ታቦር ግጥም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/peraceletus.pdf',
+                  'ጰራቅሊጦስ ግጥም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ጰራቅሊጦስ ግጥም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/setemechidesalegn.pdf',
+                  'ግጥም ስትመጭ ደስ አለኝ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ግጥም ስትመጭ ደስ አለኝ</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/yeqanawaemebet.pdf',
+                  'የቃናዋ እመቤት ግጥም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የቃናዋ እመቤት ግጥም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/yeqorontos.pdf',
+                  'የቆሮንጥስ ግጥም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">የቆሮንጥስ ግጥም</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/mistiretimiket.pdf',
+                  'ምስጢረ ጥምቀት'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">ምስጢረ ጥምቀት</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/meskel.pdf',
+                  'መስቀል ግጥም'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">መስቀል ግጥም</span>
+              </button>
+            </li>
+
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/poems/yeemenet%20arebegna.m4a',
+                  'የእምነት አርበኛ (audio)'
+                )"
+              >
+                <i class="link-icon fas fa-headphones"></i>
+                <span class="link-text">የእምነት አርበኛ (audio)</span>
+              </button>
+            </li>
+          </ul>
+
+          <!-- History & External Articles -->
+          <div class="section-title">
+            <i class="fas fa-history"></i>
+            <span class="section-title-text"
+              >History &amp; External Articles</span
+            >
+          </div>
+          <ul class="link-list">
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/abuneteklehaimanotenglish.pdf',
+                  'His Holiness Abune Tekle Haimanot (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  His Holiness Abune Tekle Haimanot (English)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/abunetekelehaimanotamharic.pdf',
+                  'አቡነ ተክለ ሃይማኖት (አማርኛ)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">አቡነ ተክለ ሃይማኖት (አማርኛ)</span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Mikaye%20article%2027-10-2006-1.pdf',
+                  'የም/ኅ/መ/ዓ/ቤ/ክ ገዳም ታሪክ'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> የም/ኅ/መ/ዓ/ቤ/ክ ገዳም ታሪክ </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20english_8-Feb-24.pdf',
+                  'Emperor Menelik and the Italians (English)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Emperor Menelik and the Italians (English)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_French_2-Mar-24.pdf',
+                  'Le roi Menelik et les Italiens (FR)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Le roi Menelik et les Italiens (FR)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_German%20translation_8-Feb-24.pdf',
+                  'Kaiser Menelik und die Italiener (DE)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Kaiser Menelik und die Italiener (DE)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_Italy%20translation_8-Feb-24.pdf',
+                  'L&#39;Imperatore Menelik e gli Italiani (IT)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  L'Imperatore Menelik e gli Italiani (IT)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_swedesh_8-Feb-24.pdf',
+                  'Kejsar Menelik och italienarna (SV)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Kejsar Menelik och italienarna (SV)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_russian_8-Feb-24.pdf',
+                  'Император Менелик и итальянцы (RU)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text">
+                  Император Менелик и итальянцы (RU)
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'https://www.ethiopianorthodox.org/amharic/archivee/historical/Emperor%20Menelik%20and%20Italians/Emperor%20Menelik%20and%20the%20Italians_hebrew_8-Feb-24.pdf',
+                  'הקיסר מנליק והאיטלקים (HE)'
+                )"
+              >
+                <i class="link-icon fas fa-file-pdf"></i>
+                <span class="link-text"> הקיסר מנליק והאיטלקים (HE) </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'http://www.telegraph.co.uk/news/worldnews/africaandindianocean/ethiopia/1951679/Lost-ark-%27discovered-in-Ethiopia%27.html',
+                  'The Ark of the Covenant article'
+                )"
+              >
+                <i class="link-icon fas fa-link"></i>
+                <span class="link-text"> The Ark of the Covenant article </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'http://www.africanews.com/site/list_messages/12282',
+                  'Dreamer helps unearthed ancient church'
+                )"
+              >
+                <i class="link-icon fas fa-link"></i>
+                <span class="link-text">
+                  Dreamer helps unearthed ancient church
+                </span>
+              </button>
+            </li>
+            <li class="link-item">
+              <button
+                class="link-button"
+                onclick="openDocument(
+                  'http://www.hmml.org/exhibits/EthiopiaExhibit/Ethiopia.htm',
+                  'Ethiopia Exhibit (HMML)'
+                )"
+              >
+                <i class="link-icon fas fa-link"></i>
+                <span class="link-text">Ethiopia Exhibit (HMML)</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="viewer" class="viewer">
+          <div class="viewer-header">
+            <button class="back-button" onclick="showList()">
+              <i class="fas fa-arrow-left"></i>
+              Back to list
+            </button>
+            <div id="viewerTitle" class="viewer-title"></div>
+          </div>
+          <div class="viewer-content">
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>Loading content...</p>
+            </div>
+            <iframe id="contentFrame" class="content-frame"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="liyu.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Church Music & Liturgy</title>
+    <link rel="preload" href="liyu.css" as="style">
+    <link rel="stylesheet" href="liyu.css" />
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      
+
+      <main>
+        
+        <div id="list">
+          <p>Select a resource to open it in the viewer.</p>
+
+          <div class="section-title">Main Audio / Liturgy Pages</div>
+          <ul>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/liturgy.html')"
+              >
+                The Ethiopian Liturgy
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/maheleteyared.html')"
+              >
+                The Hymn of St. Yared
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/horologium.html')"
+              >
+                Horologium (Seatat)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/eveningprayer.html')"
+              >
+                Evening Prayer
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/passionfriday.html')"
+              >
+                The Good Friday Service
+              </a>
+            </li>
+          </ul>
+
+          <div class="section-title">Cycles, Praises & Songs</div>
+          <ul>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/amharic/yeqolotbet/annualmisbak.html')"
+              >
+                The Annual Cycle of Introduction
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/amharic/yeqolotbet/wudasemarzema.html')"
+              >
+                Listen to Praise of Mary
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/songs.html')"
+              >
+                Daily and Festive Season Songs
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/traditional.html')"
+              >
+                Traditional Songs
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/instrumental/organ.html')"
+              >
+                Ecclesiastical Instrumental Songs
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/mezmuretewhedo/series.html')"
+              >
+                Mezmur Tewahedo – Series
+              </a>
+            </li>
+          </ul>
+
+          <div class="section-title">Documents & PDFs</div>
+          <ul>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/amharic/yezemametsheft/tarik.html')"
+              >
+                History of Church Music (Amharic)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/musicrelateddoc/mezmurenamesariyawoch.pdf')"
+              >
+                Mezmur & Melody Names (PDF)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/musicrelateddoc/merigetatsehaye.pdf')"
+              >
+                Meriget Atsehaye (PDF)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/musicrelateddoc/arganontranslation.pdf')"
+              >
+                Arganoon Translation (PDF)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/musicrelateddoc/certificate.pdf')"
+              >
+                Music Certificate (PDF)
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/churchmusic/musicrelateddoc/synodos%202.pdf')"
+              >
+                Synodos – Music Related (PDF)
+              </a>
+            </li>
+          </ul>
+
+          <div class="section-title">Teaching on Musical Instruments</div>
+          <ul>
+            <li>
+              <a
+                onclick="openInFrame('https://www.ethiopianorthodox.org/english/weekly/musicalinstrument.html')"
+              >
+                The Use of Musical Instruments in the EOTC
+              </a>
+            </li>
+          </ul>
+        </div>
+
+       
+        <div id="viewer">
+          <a class="back-link" onclick="showList()">← Back to list</a>
+          <iframe id="contentFrame"></iframe>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function openInFrame(url) {
+        document.getElementById("contentFrame").src = url;
+        document.getElementById("list").style.display = "none";
+        document.getElementById("viewer").style.display = "flex";
+      }
+
+      function showList() {
+        document.getElementById("contentFrame").src = "";
+        document.getElementById("viewer").style.display = "none";
+        document.getElementById("list").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

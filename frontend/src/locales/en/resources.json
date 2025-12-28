@@ -1,0 +1,58 @@
+{
+  "resources": {
+    "badge": "RESOURCES",
+    "title": "Explore the Library",
+    "subtitle": "Books, audio, videos, and tools to support Orthodox prayer, study, and student life.",
+    "search": {
+      "placeholder": "Search by title or description...",
+      "helper": "Search across titles and descriptions."
+    },
+    "categories": {
+      "aria": "Filter by {{category}}"
+    },
+
+    "showing_one": "Showing {{count}} resource",
+    "showing_other": "Showing {{count}} resources",
+
+    "view": {
+      "grid": "Grid",
+      "list": "List"
+    },
+
+    "loading": "Loading resources...",
+
+    "empty": {
+      "grid_title": "No resources found",
+      "grid_subtitle": "Try adjusting your filters or search terms.",
+      "list": "No resources found in this category."
+    },
+
+    "load_more": {
+      "button": "Load 10 more",
+      "progress": "({{visible}} / {{total}})"
+    },
+
+    "filters": {
+      "active_label": "Active filters:",
+      "clear_all": "Clear all",
+      "clear_all_mobile": "Clear All Filters",
+      "mobile_title": "Filter Resources",
+      "filter_button": "Filter"
+    },
+
+    "sidebar": {
+      "categories_title": "Categories",
+      "total": "{{count}} total resources"
+    },
+
+    "viewer": {
+      "audio_now_playing": "Now playing",
+      "loading": "Loading content..."
+    },
+
+    "card": {
+      "open_aria": "Open resource: {{title}}",
+      "explore": "Explore"
+    }
+  }
+}
