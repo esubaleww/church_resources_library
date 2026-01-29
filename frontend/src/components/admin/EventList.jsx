@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Pencil, Trash, Plus, Users } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 export default function EventList({ onCreate, onEdit, onViewRsvps }) {
   const [events, setEvents] = useState([]);
@@ -8,17 +9,29 @@ export default function EventList({ onCreate, onEdit, onViewRsvps }) {
   const fetchEvents = async () => {
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        setLoading(false);
+        toast.error("No admin token found. Please log in again.");
+        return;
+      }
+
       const res = await fetch("http://localhost:5000/api/events", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      if (!res.ok) throw new Error("Failed to fetch events");
-      const data = await res.json();
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to fetch events.");
+        setLoading(false);
+        return;
+      }
+
       setEvents(data);
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error loading events. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -33,17 +46,29 @@ export default function EventList({ onCreate, onEdit, onViewRsvps }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/events/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      if (!res.ok) throw new Error("Failed to delete event");
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to delete event.");
+        return;
+      }
+
       setEvents((prev) => prev.filter((e) => e._id !== id));
+      toast.success("Event deleted successfully.");
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error deleting event. Please try again.");
     }
   };
 

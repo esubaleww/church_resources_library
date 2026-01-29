@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PrayerCard from "../components/PrayerCard";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-hot-toast";
 
 export default function Prayers() {
   const [prayerList, setPrayerList] = useState([]);
@@ -13,19 +14,25 @@ export default function Prayers() {
     const fetchPrayers = async () => {
       try {
         const res = await fetch("http://localhost:5000/api/prayers");
-        if (!res.ok) throw new Error("prayers.fetch_failed");
-        const data = await res.json();
-        setPrayerList(data);
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          const msgKey = data.message || "prayers.fetch_failed";
+          toast.error(t(msgKey, "Could not load prayers."));
+          setPrayerList([]);
+          return;
+        }
+
+        setPrayerList(Array.isArray(data) ? data : []);
       } catch (error) {
-        console.error(error);
-        setPrayerList([]);
+        toast.error(t("prayers.fetch_failed", "Could not load prayers."));
       } finally {
         setLoading(false);
       }
     };
 
     fetchPrayers();
-  }, []);
+  }, [t]);
 
   const visiblePrayers =
     lng === "am"
@@ -33,7 +40,7 @@ export default function Prayers() {
           (p) =>
             (p.title_am && p.title_am.trim()) ||
             (p.description_am && p.description_am.trim()) ||
-            (p.filePath_am && p.filePath_am.trim())
+            (p.filePath_am && p.filePath_am.trim()),
         )
       : prayerList;
 

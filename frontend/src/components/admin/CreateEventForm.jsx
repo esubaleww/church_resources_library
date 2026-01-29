@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function CreateEventForm({ onCreated, onCancel }) {
   const [title, setTitle] = useState("");
@@ -24,6 +25,12 @@ export default function CreateEventForm({ onCreated, onCancel }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
+
       const res = await fetch("http://localhost:5000/api/events", {
         method: "POST",
         headers: {
@@ -40,14 +47,18 @@ export default function CreateEventForm({ onCreated, onCancel }) {
         }),
       });
 
-      if (!res.ok) throw new Error("Failed to create event");
+      const data = await res.json().catch(() => ({}));
 
-      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message || "Failed to create event.");
+        return;
+      }
+
+      toast.success("Event created successfully.");
       onCreated?.(data);
       resetForm();
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error creating event. Please try again.");
     } finally {
       setLoading(false);
     }

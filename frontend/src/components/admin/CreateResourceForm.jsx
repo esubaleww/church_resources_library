@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const RESOURCE_CATEGORIES = [
   "Scripture",
@@ -48,6 +49,11 @@ export default function CreateResourceForm({ onCreated, onCancel }) {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
 
       const body = {
         title_en: titleEn,
@@ -77,17 +83,18 @@ export default function CreateResourceForm({ onCreated, onCancel }) {
         body: JSON.stringify(body),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.message || "Failed to create resource");
+        toast.error(data.message || "Failed to create resource.");
+        return;
       }
 
-      const data = await res.json();
+      toast.success("Resource created successfully.");
       onCreated?.(data);
       resetForm();
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error creating resource. Please try again.");
     } finally {
       setLoading(false);
     }

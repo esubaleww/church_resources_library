@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function CreatePrayerForm({ onCreated, onCancel }) {
   const [editingLang, setEditingLang] = useState("en");
@@ -33,6 +34,12 @@ export default function CreatePrayerForm({ onCreated, onCancel }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
+
       const body = {
         title_en: titleEn,
         title_am: titleAm,
@@ -44,6 +51,7 @@ export default function CreatePrayerForm({ onCreated, onCancel }) {
         time,
         image,
 
+        // fallback fields used by frontend where language is not selected
         title: titleEn,
         description: descriptionEn,
         filePath: filePathEn || filePathAm,
@@ -58,17 +66,18 @@ export default function CreatePrayerForm({ onCreated, onCancel }) {
         body: JSON.stringify(body),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.message || "Failed to create prayer");
+        toast.error(data.message || "Failed to create prayer.");
+        return;
       }
 
-      const data = await res.json();
+      toast.success("Prayer created successfully.");
       onCreated?.(data);
       resetForm();
     } catch (err) {
-      console.log("Create prayer error:", err);
-      alert("Failed to create prayer");
+      toast.error("Error creating prayer. Please try again.");
     } finally {
       setLoading(false);
     }

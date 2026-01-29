@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function AdminContacts() {
   const [messages, setMessages] = useState([]);
@@ -14,6 +15,7 @@ export default function AdminContacts() {
         const token = localStorage.getItem("token");
         if (!token) {
           setLoading(false);
+          toast.error("No admin token found. Please log in again.");
           return;
         }
 
@@ -27,10 +29,10 @@ export default function AdminContacts() {
         if (res.ok) {
           setMessages(data);
         } else {
-          console.error(data.message || "Failed to load messages");
+          toast.error(data.message || "Failed to load messages.");
         }
       } catch (err) {
-        console.error(err);
+        toast.error("Could not load messages. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -49,14 +51,14 @@ export default function AdminContacts() {
 
     const groups = Array.from(map.entries()).map(([userId, msgs]) => {
       const sorted = [...msgs].sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
       );
       const latest = sorted[0];
       return { userId, messages: sorted, latest };
     });
 
     groups.sort(
-      (a, b) => new Date(b.latest.createdAt) - new Date(a.latest.createdAt)
+      (a, b) => new Date(b.latest.createdAt) - new Date(a.latest.createdAt),
     );
     return groups;
   }, [messages]);
@@ -83,6 +85,12 @@ export default function AdminContacts() {
     try {
       setSending(true);
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setSending(false);
+        return;
+      }
+
       const res = await fetch(
         `http://localhost:5000/api/contact/admin/${latestThread._id}/replies`,
         {
@@ -92,20 +100,22 @@ export default function AdminContacts() {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({ message: replyText }),
-        }
+        },
       );
       const updated = await res.json();
+
       if (!res.ok) {
-        console.error(updated.message || "Failed to send reply");
+        toast.error(updated.message || "Failed to send reply.");
         return;
       }
 
       setMessages((prev) =>
-        prev.map((m) => (m._id === updated._id ? updated : m))
+        prev.map((m) => (m._id === updated._id ? updated : m)),
       );
       setReplyText("");
+      toast.success("Reply sent successfully.");
     } catch (err) {
-      console.error(err);
+      toast.error("Could not send reply. Please try again.");
     } finally {
       setSending(false);
     }

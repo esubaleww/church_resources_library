@@ -58,7 +58,7 @@ export default function EventCard({
               name: storedUser.name,
               email: storedUser.email,
             }),
-          }
+          },
         );
         const data = await res.json();
 
@@ -206,8 +206,8 @@ export default function EventCard({
               {submitted
                 ? t("buttons.rsvped")
                 : submitting
-                ? t("buttons.submitting")
-                : t("buttons.rsvp")}
+                  ? t("buttons.submitting")
+                  : t("buttons.rsvp")}
             </motion.button>
           </div>
         </div>

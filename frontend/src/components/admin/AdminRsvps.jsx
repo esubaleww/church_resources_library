@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function AdminRsvps() {
   const [events, setEvents] = useState([]);
@@ -11,6 +12,7 @@ export default function AdminRsvps() {
         const token = localStorage.getItem("token");
         if (!token) {
           setEvents([]);
+          toast.error("No admin token found. Please log in again.");
           setLoading(false);
           return;
         }
@@ -20,15 +22,17 @@ export default function AdminRsvps() {
             Authorization: `Bearer ${token}`,
           },
         });
+
         const json = await res.json();
+
         if (res.ok) {
           const withRsvps = json.filter((e) => e.rsvps && e.rsvps.length > 0);
           setEvents(withRsvps);
         } else {
-          console.error(json);
+          toast.error(json.message || "Failed to load RSVP data.");
         }
       } catch (err) {
-        console.error(err);
+        toast.error("Could not load RSVPs. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -64,9 +68,7 @@ export default function AdminRsvps() {
                 {event.title}
               </h3>
               {event.date && (
-                <p className="text-xs text-neutral-400">
-                  {new Date(event.date).toLocaleString()}
-                </p>
+                <p className="text-xs text-neutral-400">{event.date}</p>
               )}
             </div>
             <span className="text-xs px-2 py-1 rounded-full bg-neutral-900 text-neutral-300">

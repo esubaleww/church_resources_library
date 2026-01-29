@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 export default function EditPrayerForm({ item, onUpdated, onCancel }) {
   const [editingLang, setEditingLang] = useState("en");
@@ -38,6 +39,11 @@ export default function EditPrayerForm({ item, onUpdated, onCancel }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
 
       const body = {
         title_en: titleEn,
@@ -64,15 +70,17 @@ export default function EditPrayerForm({ item, onUpdated, onCancel }) {
         body: JSON.stringify(body),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        throw new Error(data.message || "Failed to update prayer");
+        toast.error(data.message || "Failed to update prayer.");
+        return;
       }
 
+      toast.success("Prayer updated successfully.");
       onUpdated?.(data);
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error updating prayer. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -165,7 +173,7 @@ export default function EditPrayerForm({ item, onUpdated, onCancel }) {
           placeholder={
             isEn
               ? "Prayer text path (English, e.g. /prayers/morning_en.html)"
-              : "የጸሎት ጽሑፍ መንገድ (አማርኛ,  ለምሳሌ . /prayers/morning_am.html)"
+              : "የጸሎት ጽሑፍ መንገድ (አማርኛ,  ለምሳሌ . /prayers/morning_am.html)"
           }
           className="w-full rounded-xl border border-neutral-800 bg-neutral-900/80 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
         />

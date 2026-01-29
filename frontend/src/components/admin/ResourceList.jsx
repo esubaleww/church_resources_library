@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Pencil, Trash, Plus } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 export default function ResourceList({ onCreate, onEdit }) {
   const [resources, setResources] = useState([]);
@@ -9,9 +10,15 @@ export default function ResourceList({ onCreate, onEdit }) {
     try {
       const res = await fetch("http://localhost:5000/api/resources");
       const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to load resources.");
+        return;
+      }
+
       setResources(data);
     } catch (err) {
-      console.error(err);
+      toast.error("Error loading resources. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -27,6 +34,11 @@ export default function ResourceList({ onCreate, onEdit }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/resources/${id}`, {
         method: "DELETE",
         headers: {
@@ -34,12 +46,17 @@ export default function ResourceList({ onCreate, onEdit }) {
         },
       });
 
-      if (!res.ok) throw new Error("Failed to delete resource");
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to delete resource.");
+        return;
+      }
 
       setResources((prev) => prev.filter((r) => r._id !== id));
+      toast.success("Resource deleted successfully.");
     } catch (err) {
-      console.error(err);
-      alert("Failed to delete resource");
+      toast.error("Error deleting resource. Please try again.");
     }
   };
 

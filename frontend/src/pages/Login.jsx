@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout";
+import { toast } from "react-hot-toast";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -14,21 +14,27 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     setLoading(true);
+
     try {
       const res = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
+
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        throw new Error(data.message || "Login failed");
+        toast.error(data.message || "Login failed.");
+        setLoading(false);
+        return;
       }
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
+
+      toast.success("Signed in successfully.");
 
       if (data.user?.role === "admin") {
         navigate("/admin");
@@ -36,7 +42,7 @@ export default function Login() {
         navigate("/");
       }
     } catch (err) {
-      setError(err.message);
+      toast.error("Unable to sign in. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -48,12 +54,6 @@ export default function Login() {
       subtitle="Sign in to manage your resources, messages, and account."
     >
       <form onSubmit={handleSubmit} className="space-y-4">
-        {error && (
-          <div className="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
-            {error}
-          </div>
-        )}
-
         <div className="space-y-1">
           <label
             htmlFor="email"

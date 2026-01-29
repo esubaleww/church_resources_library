@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 const RESOURCE_CATEGORIES = [
   "Scripture",
@@ -53,6 +54,11 @@ export default function EditResourceForm({ item, onUpdated, onCancel }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
 
       const body = {
         type_en: typeEn,
@@ -83,18 +89,20 @@ export default function EditResourceForm({ item, onUpdated, onCancel }) {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(body),
-        }
+        },
       );
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        throw new Error(data.message || "Failed to update resource");
+        toast.error(data.message || "Failed to update resource.");
+        return;
       }
 
+      toast.success("Resource updated successfully.");
       onUpdated?.(data);
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error updating resource. Please try again.");
     } finally {
       setLoading(false);
     }

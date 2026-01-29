@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-hot-toast";
 
 export default function MyMessages() {
   const [threads, setThreads] = useState([]);
@@ -9,35 +10,41 @@ export default function MyMessages() {
   const { t } = useTranslation("myMessages");
 
   useEffect(() => {
-    const run = async () => {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        navigate("/login");
-        return;
-      }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
 
+    const fetchAndSet = async () => {
       try {
         const res = await fetch("http://localhost:5000/api/contact/mine", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
-
-        const data = await res.json();
-        if (res.ok) {
-          setThreads(data);
-        } else {
-          console.error(data.message || "Failed to load messages");
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          toast.error(data.message || t("errors.load_failed"));
+          return;
         }
+
+        const safe = Array.isArray(data) ? data : [];
+        setThreads((prev) => {
+          if (JSON.stringify(prev) !== JSON.stringify(safe)) {
+            return safe;
+          }
+          return prev;
+        });
       } catch (err) {
-        console.error("MY MESSAGES FETCH ERROR:", err);
+        toast.error(t("errors.generic") || "Could not load messages.");
       } finally {
         setLoading(false);
       }
     };
 
-    run();
-  }, [navigate]);
+    fetchAndSet();
+    const intervalId = setInterval(fetchAndSet, 15000);
+    return () => clearInterval(intervalId);
+  }, [navigate, t]);
 
   const handleDeleteThread = async (threadId) => {
     if (!window.confirm(t("delete_confirm"))) {
@@ -46,6 +53,11 @@ export default function MyMessages() {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error(t("errors.auth") || "Please log in again.");
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/contact/${threadId}`, {
         method: "DELETE",
         headers: {
@@ -53,28 +65,26 @@ export default function MyMessages() {
         },
       });
 
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        console.error(data.message || "Failed to delete conversation");
+        toast.error(data.message || t("errors.delete_failed"));
         return;
       }
 
       setThreads((prev) => prev.filter((t) => t._id !== threadId));
+      toast.success(t("delete_success") || "Conversation deleted.");
     } catch (err) {
-      console.error("DELETE THREAD ERROR:", err);
+      toast.error(t("errors.generic") || "Could not delete conversation.");
     }
   };
 
   if (loading) {
     return (
-      (<p>{t("loading")}</p>),
-      (
-        <div className="min-h-screen bg-linear-to-b from-amber-50 via-neutral-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 flex items-center justify-center">
-          <p className="text-sm text-neutral-500 dark:text-neutral-300">
-            {t("loading")}
-          </p>
-        </div>
-      )
+      <div className="min-h-screen bg-linear-to-b from-amber-50 via-neutral-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 flex items-center justify-center">
+        <p className="text-sm text-neutral-500 dark:text-neutral-300">
+          {t("loading")}
+        </p>
+      </div>
     );
   }
 
@@ -130,8 +140,8 @@ export default function MyMessages() {
                     tThread.status === "answered"
                       ? "bg-emerald-50 text-emerald-700 border-emerald-200"
                       : tThread.status === "closed"
-                      ? "bg-neutral-100 text-neutral-700 border-neutral-200"
-                      : "bg-amber-50 text-amber-700 border-amber-200"
+                        ? "bg-neutral-100 text-neutral-700 border-neutral-200"
+                        : "bg-amber-50 text-amber-700 border-amber-200"
                   }`}
                 >
                   {t(`status.${tThread.status}`)}

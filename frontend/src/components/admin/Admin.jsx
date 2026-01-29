@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, LogOut, Inbox, Users, BookOpenText } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 import ResourceList from "./ResourceList";
 import EventList from "./EventList";
@@ -49,6 +50,11 @@ export default function Admin({ onExit }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/${type}/${item._id}`, {
         method: "DELETE",
         headers: {
@@ -56,14 +62,20 @@ export default function Admin({ onExit }) {
           Authorization: `Bearer ${token}`,
         },
       });
-      if (!res.ok) throw new Error("Failed to delete");
-      alert(
-        `${type.charAt(0).toUpperCase() + type.slice(1)} deleted successfully`
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to delete item.");
+        return;
+      }
+
+      toast.success(
+        `${type.charAt(0).toUpperCase() + type.slice(1)} deleted successfully.`,
       );
       handleBackToList();
     } catch (err) {
-      console.error(err);
-      alert("Error deleting item");
+      toast.error("Error deleting item. Please try again.");
     }
   };
 

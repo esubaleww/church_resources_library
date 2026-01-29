@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 export default function EditEventForm({ item, onUpdated, onCancel }) {
   const [title, setTitle] = useState("");
@@ -27,6 +28,12 @@ export default function EditEventForm({ item, onUpdated, onCancel }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        setLoading(false);
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/events/${item._id}`, {
         method: "PUT",
         headers: {
@@ -43,15 +50,17 @@ export default function EditEventForm({ item, onUpdated, onCancel }) {
         }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        throw new Error(data.message || "Failed to update event");
+        toast.error(data.message || "Failed to update event.");
+        return;
       }
 
+      toast.success("Event updated successfully.");
       onUpdated?.(data);
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      toast.error("Error updating event. Please try again.");
     } finally {
       setLoading(false);
     }

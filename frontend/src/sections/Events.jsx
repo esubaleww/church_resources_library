@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import EventCard from "../components/EventCard";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-hot-toast";
 
 export default function Events() {
   const [eventList, setEventList] = useState([]);
@@ -23,11 +24,20 @@ export default function Events() {
           },
         });
 
-        if (!res.ok) throw new Error("events.fetch_failed");
-        const data = await res.json();
-        setEventList(data);
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          const msgKey = data.message || "events.fetch_failed";
+          toast.error(t(msgKey, "Could not load events."));
+          setEventList([]);
+          return;
+        }
+
+        if (JSON.stringify(eventList) !== JSON.stringify(data)) {
+          setEventList(data);
+        }
       } catch (err) {
-        console.error(err);
+        toast.error(t("events.fetch_failed", "Could not load events."));
         setEventList([]);
       } finally {
         setLoading(false);
@@ -35,7 +45,9 @@ export default function Events() {
     };
 
     fetchEvents();
-  }, []);
+    const intervalId = setInterval(fetchEvents, 15000);
+    return () => clearInterval(intervalId);
+  }, [eventList, t]);
 
   const handleRsvp = (id, payload) => {
     setEventList((prev) =>
@@ -46,8 +58,8 @@ export default function Events() {
               attendees: payload.attendees,
               hasRsvped: payload.hasRsvped,
             }
-          : ev
-      )
+          : ev,
+      ),
     );
   };
 
@@ -222,7 +234,7 @@ export default function Events() {
               <p className="text-neutral-600 dark:text-neutral-400 max-w-md mx-auto">
                 {t(
                   "empty.message",
-                  "Check back later for new events and celebrations"
+                  "Check back later for new events and celebrations",
                 )}
               </p>
             </motion.div>

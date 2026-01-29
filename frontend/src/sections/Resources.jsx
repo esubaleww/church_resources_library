@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import ResourceCard from "../components/ResourceCard";
 import ResourceRow from "../components/ResourceRow";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { resourceCategories } from "../utils/resourceCategories";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-hot-toast";
 
 export default function Resources() {
   const [resources, setResources] = useState([]);
@@ -21,10 +22,8 @@ export default function Resources() {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [loading, setLoading] = useState(true);
-
   const [viewerResource, setViewerResource] = useState(null);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-
   const [viewMode, setViewMode] = useState("grid");
   const [frameLoading, setFrameLoading] = useState(true);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -39,20 +38,44 @@ export default function Resources() {
     const fetchResources = async () => {
       try {
         const res = await fetch("http://localhost:5000/api/resources");
-        if (!res.ok) throw new Error("resources.fetch_failed");
-        const data = await res.json();
-        setResources(data);
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          const msgKey = data.message || "resources.fetch_failed";
+          toast.error(t(msgKey, "Could not load resources. Please try again."));
+          setResources([]);
+          return;
+        }
+
+        setResources((prev) => {
+          if (
+            Array.isArray(data) &&
+            prev.length === data.length &&
+            JSON.stringify(prev) === JSON.stringify(data)
+          ) {
+            return prev;
+          }
+
+          return Array.isArray(data) ? data : [];
+        });
       } catch (error) {
-        console.error(error);
+        toast.error(
+          t(
+            "resources.fetch_failed",
+            "Could not load resources. Please try again.",
+          ),
+        );
         setResources([]);
       } finally {
         setLoading(false);
       }
     };
-    fetchResources();
-  }, []);
 
-  t;
+    fetchResources();
+    const interval = setInterval(fetchResources, 10000);
+    return () => clearInterval(interval);
+  }, [t, loading]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchTerm);
@@ -61,68 +84,94 @@ export default function Resources() {
     return () => clearTimeout(timer);
   }, [searchTerm, PAGE_SIZE]);
 
+  const languageResources = useMemo(() => {
+    return resources
+      .map((res) => {
+        let title, description;
+
+        if (lng === "am") {
+          title = res.title_am;
+          description = res.description_am;
+        } else {
+          title = res.title || res.title_en;
+          description = res.description || res.description_en;
+        }
+
+        return {
+          ...res,
+          title: title || "",
+          description: description || "",
+        };
+      })
+      .filter((res) => {
+        if (lng === "am") {
+          return (
+            (res.title_am && res.title_am.trim()) ||
+            (res.description_am && res.description_am.trim())
+          );
+        } else {
+          return (
+            (res.title && res.title.trim()) ||
+            (res.description && res.description.trim()) ||
+            (res.title_en && res.title_en.trim()) ||
+            (res.description_en && res.description_en.trim())
+          );
+        }
+      });
+  }, [resources, lng]);
+
+  const searchableResources = useMemo(
+    () =>
+      languageResources.map((res) => ({
+        ...res,
+        searchString:
+          `${res.title || ""} ${res.description || ""}`.toLowerCase(),
+      })),
+    [languageResources],
+  );
+
   const filteredResources = useMemo(() => {
-    let filtered = resources;
+    let filtered = searchableResources;
 
     if (selectedCategory !== "All") {
       const cat = selectedCategory.toLowerCase().trim();
       filtered = filtered.filter(
-        (res) => res.category && res.category.toLowerCase().trim() === cat
+        (res) => res.category && res.category.toLowerCase().trim() === cat,
       );
     }
 
     if (debouncedSearch.trim() !== "") {
       const term = debouncedSearch.toLowerCase();
-      filtered = filtered.filter(
-        (res) =>
-          (res.title && res.title.toLowerCase().includes(term)) ||
-          (res.description && res.description.toLowerCase().includes(term)) ||
-          (res.title_en && res.title_en.toLowerCase().includes(term)) ||
-          (res.description_en &&
-            res.description_en.toLowerCase().includes(term)) ||
-          (res.title_am && res.title_am.toLowerCase().includes(term)) ||
-          (res.description_am &&
-            res.description_am.toLowerCase().includes(term))
-      );
+      filtered = filtered.filter((res) => res.searchString.includes(term));
     }
 
     return filtered;
-  }, [resources, selectedCategory, debouncedSearch]);
+  }, [searchableResources, selectedCategory, debouncedSearch]);
 
-  const languageFilteredResources =
-    lng === "am"
-      ? filteredResources.filter(
-          (res) =>
-            (res.title_am && res.title_am.trim()) ||
-            (res.description_am && res.description_am.trim()) ||
-            (res.category_am && res.category_am.trim()) ||
-            (res.type_am && res.type_am.trim()) ||
-            (res.link_am && res.link_am.trim())
-        )
-      : filteredResources;
+  const visibleResources = filteredResources.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredResources.length;
 
-  const visibleResources = languageFilteredResources.slice(0, visibleCount);
-  const hasMore = visibleCount < languageFilteredResources.length;
-
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     setVisibleCount((prev) => prev + PAGE_SIZE);
-  };
+  }, []);
 
-  const handleOpenResource = (res) => {
+  const handleOpenResource = useCallback((res) => {
     setViewerResource(res);
     setIsViewerOpen(true);
     setFrameLoading(true);
-  };
+  }, []);
 
-  const handleCloseViewer = () => {
+  const handleCloseViewer = useCallback(() => {
     setIsViewerOpen(false);
     setTimeout(() => {
       setViewerResource(null);
       setFrameLoading(true);
     }, 300);
-  };
+  }, []);
 
-  const convertYouTubeToEmbed = (url) => {
+  const convertYouTubeToEmbed = useCallback((url) => {
+    if (!url || typeof url !== "string") return url;
+
     try {
       const u = new URL(url);
 
@@ -131,28 +180,35 @@ export default function Resources() {
         if (inner) return convertYouTubeToEmbed(inner);
       }
 
-      let videoId = "";
-
-      if (u.searchParams.get("v")) {
-        videoId = u.searchParams.get("v");
-      } else if (u.hostname.includes("youtu.be")) {
-        videoId = u.pathname.replace("/", "");
+      if (
+        !u.hostname.includes("youtube.com") &&
+        !u.hostname.includes("youtu.be")
+      ) {
+        return url;
       }
 
-      if (videoId && videoId.length === 11) {
+      let videoId = "";
+
+      if (u.searchParams.has("v")) {
+        videoId = u.searchParams.get("v");
+      } else if (u.hostname.includes("youtu.be")) {
+        videoId = u.pathname.slice(1);
+      }
+
+      if (videoId && /^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
         return `https://www.youtube.com/embed/${videoId}`;
       }
     } catch (e) {
       console.error("Failed to parse YouTube URL", e);
     }
     return url;
-  };
+  }, []);
 
-  const clearFilters = () => {
+  const clearFilters = useCallback(() => {
     setSelectedCategory("All");
     setSearchTerm("");
     setVisibleCount(PAGE_SIZE);
-  };
+  }, [PAGE_SIZE]);
 
   return (
     <section
@@ -455,7 +511,7 @@ export default function Resources() {
                   <div className="text-center">
                     <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
                       {t("showing", {
-                        count: languageFilteredResources.length,
+                        count: filteredResources.length,
                       })}
                     </p>
                     <p className="text-xs text-amber-700/70 dark:text-neutral-400 mt-1">
@@ -548,7 +604,7 @@ export default function Resources() {
                       <span className="text-xs text-neutral-500 dark:text-neutral-400">
                         {t("load_more.progress", {
                           visible: visibleResources.length,
-                          total: languageFilteredResources.length,
+                          total: filteredResources.length,
                         })}
                       </span>
                       <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -629,6 +685,7 @@ export default function Resources() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 lg:hidden"
           >
             <div
@@ -640,7 +697,7 @@ export default function Resources() {
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "spring", damping: 25 }}
+              transition={{ duration: 0.3 }}
               className="absolute left-0 top-0 h-full w-80 max-w-full 
                          bg-lnear-to-b from-amber-50 to-white 
                          dark:from-slate-950 dark:to-slate-900 
@@ -708,12 +765,14 @@ export default function Resources() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-100"
           >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="absolute inset-0 bg-black/80 backdrop-blur-lg"
               onClick={handleCloseViewer}
             />
@@ -722,7 +781,7 @@ export default function Resources() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
+              transition={{ duration: 0.2 }}
               className="absolute inset-0 
                    bg-linear-to-br from-slate-900 to-slate-950 
                    shadow-2xl 
@@ -739,10 +798,10 @@ export default function Resources() {
                       viewerResource?.type === "Video"
                         ? "bg-red-500"
                         : viewerResource?.type === "Audio"
-                        ? "bg-emerald-500"
-                        : viewerResource?.type === "PDF"
-                        ? "bg-amber-500"
-                        : "bg-purple-500"
+                          ? "bg-emerald-500"
+                          : viewerResource?.type === "PDF"
+                            ? "bg-amber-500"
+                            : "bg-purple-500"
                     }`}
                   />
                   <div className="min-w-0">

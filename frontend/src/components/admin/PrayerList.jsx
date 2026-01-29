@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Pencil, Trash, Plus } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 export default function PrayerList({ onCreate, onEdit }) {
   const [prayers, setPrayers] = useState([]);
@@ -9,9 +10,13 @@ export default function PrayerList({ onCreate, onEdit }) {
     try {
       const res = await fetch("http://localhost:5000/api/prayers");
       const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message || "Failed to load prayers.");
+        return;
+      }
       setPrayers(data);
     } catch (err) {
-      console.error(err);
+      toast.error("Error loading prayers. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -26,6 +31,11 @@ export default function PrayerList({ onCreate, onEdit }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("No admin token found. Please log in again.");
+        return;
+      }
+
       const res = await fetch(`http://localhost:5000/api/prayers/${id}`, {
         method: "DELETE",
         headers: {
@@ -33,12 +43,17 @@ export default function PrayerList({ onCreate, onEdit }) {
         },
       });
 
-      if (!res.ok) throw new Error("Failed to delete prayer");
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.message || "Failed to delete prayer.");
+        return;
+      }
 
       setPrayers((prev) => prev.filter((p) => p._id !== id));
+      toast.success("Prayer deleted successfully.");
     } catch (err) {
-      console.error(err);
-      alert("Failed to delete prayer");
+      toast.error("Error deleting prayer. Please try again.");
     }
   };
 
