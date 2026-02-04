@@ -104,11 +104,11 @@ It organizes teachings, liturgy materials, history, saints’ lives, commentarie
 - cd church_resources_library
 - Install dependencies
 
-# frontend (if separate)
+# frontend
 
 - npm install
 
-# backend (if in /server or similar)
+# backend
 
 - cd backend
 - npm install
@@ -121,11 +121,11 @@ It organizes teachings, liturgy materials, history, saints’ lives, commentarie
 
 -Run the app
 
-# backend (example)
+# backend
 
 -npm run backend
 
-# frontend (example)
+# frontend
 
 npm run dev
 Then open the dev URL (e.g. http://localhost:5173) in your browser.
