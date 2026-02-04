@@ -19,7 +19,7 @@ It organizes teachings, liturgy materials, history, saints’ lives, commentarie
 
 - **Resource library (spiritual media)**
   - Categorized resources: Scripture & study, teachings, spiritual life, liturgy, saints & history, youth & campus, media.
-  - Type-based filtering: PDF, Video, Audio, Book, Web/App.
+  - Category-based filtering: Scripture & study, teachings, spiritual life, liturgy, saints & history, youth & campus, media.
   - In‑app viewer for PDFs, videos, audio, and web links using iframes.
 
 - **Community and contact**
