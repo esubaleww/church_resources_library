@@ -5,6 +5,10 @@ It organizes teachings, liturgy materials, history, saints’ lives, commentarie
 
 ---
 
+## Screenshot
+
+![App Screenshot](./frontend//public/assets/home.png)
+
 ## Features
 
 ### For Students / Users

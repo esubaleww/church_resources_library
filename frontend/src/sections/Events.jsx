@@ -28,7 +28,7 @@ export default function Events() {
 
         if (!res.ok) {
           const msgKey = data.message || "events.fetch_failed";
-          toast.error(t(msgKey, "Could not load events."));
+          toast.error(t(msgKey, "Could not load events.", "error"));
           setEventList([]);
           return;
         }
@@ -37,7 +37,9 @@ export default function Events() {
           setEventList(data);
         }
       } catch (err) {
-        toast.error(t("events.fetch_failed", "Could not load events."));
+        toast.error(
+          t("events.fetch_failed", "Could not load events.", "error"),
+        );
         setEventList([]);
       } finally {
         setLoading(false);
@@ -47,7 +49,7 @@ export default function Events() {
     fetchEvents();
     const intervalId = setInterval(fetchEvents, 15000);
     return () => clearInterval(intervalId);
-  }, [eventList, t]);
+  }, [t]);
 
   const handleRsvp = (id, payload) => {
     setEventList((prev) =>
